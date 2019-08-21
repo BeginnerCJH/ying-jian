@@ -1,0 +1,40 @@
+/* pages/popular/popular.wxss */
+
+page {
+  height: 100%;
+  background: #f3f3f3;
+}
+
+.search {
+  height: 80rpx;
+  box-sizing: border-box;
+  padding: 10rpx 15rpx;
+  position: relative;
+}
+
+.search .icon-search{
+  position: absolute;
+  top: 50%;
+  left: 30rpx;
+  transform: translate(0,-50%);
+}
+
+.search input {
+  background: #fff;
+  height: 60rpx;
+  border-radius: 8rpx;
+}
+
+.search-txt-plc {
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.swiper {
+  height: 300rpx;
+}
+
+.slide-image {
+  height: 100%;
+  /* object-fit: cover; */
+}

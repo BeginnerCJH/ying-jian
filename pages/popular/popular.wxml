@@ -1,0 +1,21 @@
+<!--pages/popular/popular.wxml-->
+<view>
+<!-- 搜索框 -->
+<block>
+    <view class="search">
+      <icon type="search" size="20" class="icon-search"/>
+      <input placeholder="请输入关键字搜索" placeholder-class="search-txt-plc"></input>
+    </view>
+</block>
+<!-- 轮播图 -->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper">
+  <block wx:for="{{bannerList}}">
+    <swiper-item>
+      <image mode="aspectFill" src="{{item.imgUrl}}" class="slide-image" data-id="{{item.id}}"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+</view>

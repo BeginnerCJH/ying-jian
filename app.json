@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/popular/popular",
+    "pages/coming/coming",
+    "pages/top/top",
+    "pages/mine/mine"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#48a76d",
+    "navigationBarTitleText": "电影推荐",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color":"#8c8c8c",
+    "selectedColor": "#47a86c",
+    "list": [
+      {
+        "pagePath": "pages/popular/popular",
+        "text": "热映",
+        "iconPath": "./images/tabIcon/popular_icon.png",
+        "selectedIconPath": "./images/tabIcon/popular_active_icon.png"
+      },
+      {
+        "pagePath": "pages/coming/coming",
+        "text": "待映",
+        "iconPath": "./images/tabIcon/coming_icon.png",
+        "selectedIconPath": "./images/tabIcon/coming_active_icon.png"
+      },
+      {
+        "pagePath": "pages/top/top",
+        "text": "口碑",
+        "iconPath": "./images/tabIcon/top_icon.png",
+        "selectedIconPath": "./images/tabIcon/top_active_icon.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "./images/tabIcon/my_icon.png",
+        "selectedIconPath": "./images/tabIcon/my_active_icon.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}
