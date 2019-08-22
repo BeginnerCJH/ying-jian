@@ -1,0 +1,27 @@
+<template name="movieList">
+    <block>
+        <view class="main">
+          <view class="list" wx:for="{{filmSubjects}}" wx:key="{{item.id}}">
+            <view class="list-top" catchtap="viewDetails" data-id="{{item.id}}">
+              <image src="{{item.images.large}}" mode="aspectFill">
+              </image>
+              <text class="rating">{{item.rating.average!=0?item.rating.average:'暂无评'}}分</text>
+            </view>
+            <view class="list-bottom">
+              <view class="original-title">{{item.title}}</view>
+              <view class="genres">
+              <scroll-view scroll-x style="width: 100%" scroll-top="40">
+                <text class="genres-li" wx:for="{{item.genres}}" wx:key="{{subIndex}}" wx:for-item="subItem" wx:for-index="subIndex" catchtap="findTag" data-tag="{{subItem}}">{{subItem}}</text>
+                </scroll-view>
+              </view>
+            </view>
+          </view>
+        </view>
+    </block>
+    <block wx:if="{{hasMore}}">
+        <text class="tip">拼命加载中...</text>
+    </block>
+     <block wx:else> 
+        <text class="tip">没有更多内容</text>
+    </block>
+</template>

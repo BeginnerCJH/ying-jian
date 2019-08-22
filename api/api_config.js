@@ -17,7 +17,7 @@ var staticUrl = 'https://static.sesine.com/wechat-weapp-movie'
 var apiUrl = 'https://douban.uieee.com/v2'
 module.exports={
   city:'',
-  count:20,
+  count:10,
   baiduAK: 'Y1R5guY8Y2GNRdDpLz7SUeM3QgADAXec',
   apiList:{
     popular: apiUrl +"/movie/in_theaters",

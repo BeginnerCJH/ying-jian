@@ -1,51 +1,4 @@
-/* pages/popular/popular.wxss */
-@import "../../template/movieList.wxss";
-page {
-  height: 100%;
-  background: #f3f3f3;
-  position: relative;
-}
-
-.search {
-  height: 80rpx;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 10rpx 15rpx;
-  position: fixed;
-  background: #f3f3f3;
-  z-index: 99;
-}
-
-.search .icon-search{
-  position: absolute;
-  top: 50%;
-  left: 30rpx;
-  transform: translate(0,-50%);
-}
-
-.search input {
-  background: #fff;
-  height: 60rpx;
-  border-radius: 8rpx;
-}
-
-.search-txt-plc {
-  font-size: 32rpx;
-  text-align: center;
-}
-.con{
-  padding-top: 80rpx;
-}
-
-.swiper {
-  height: 300rpx;
-}
-
-.slide-image {
-  height: 100%;
-  width: 100%;
-}
-/* .con .main{
+.main{
   padding: 15rpx;
   display: flex;
   flex-wrap: wrap;
@@ -129,4 +82,4 @@ page {
   display: inline-block;
   line-height: 64rpx;
   text-align: center;
-} */
+}

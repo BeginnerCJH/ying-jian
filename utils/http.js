@@ -12,6 +12,13 @@ function request({
 }
 
 function _request(url, resolve, reject, data, method, header, dataType,responseType) {
+  wx.showToast({
+    title: '数据加载中',
+    icon: 'loading',
+    duration:2000,
+    mask: true
+  })
+  wx.showNavigationBarLoading()
   wx.request({
     url: url,
     data: data,
@@ -25,7 +32,10 @@ function _request(url, resolve, reject, data, method, header, dataType,responseT
     fail: function(err) {
       reject()
     },
-    complete: function(res) {},
+    complete: function(res) {
+      wx.hideToast()
+      wx.hideNavigationBarLoading()
+    },
   })
 }
 

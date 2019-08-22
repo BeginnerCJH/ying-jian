@@ -3,7 +3,9 @@
     "pages/popular/popular",
     "pages/coming/coming",
     "pages/top/top",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/filmDetails/filmDetails",
+    "pages/skinPeeler/skinPeeler"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,2 +1,26 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view>
+  <view class="mine-top" style="background-image: url({{background}});backgroundSize:'cover'">
+    <view class="huanhu" bindtap="skinPeeler"></view>
+    <view class="user">
+      <button class="user-btn" open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo" wx:if="{{isAuthorization}}">点击登录</button>
+      <view class="user-info" wx:else>
+        <image src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+        <view class="text">
+          <text>{{userInfo.nickName}}</text>
+          <text class="gender {{userInfo.gender==1? 'gender-bg-n' :'gender-bg-v' }}"></text>
+        </view>
+        <view class="text2">{{userInfo.country}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 下半部分 -->
+  <view class="mine-bottom">
+    <view class="m-li">收藏</view>
+    <view class="m-li">浏览记录</view>
+    <view class="m-li">摇一摇</view>
+    <view class="m-li">相册</view>
+    <view class="m-li">设置</view>
+  </view>
+
+</view>

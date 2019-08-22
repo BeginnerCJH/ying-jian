@@ -5,16 +5,49 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    background: "https://static.sesine.com/wechat-weapp-movie/images/user_bg_2.jpg",
+    isAuthorization:true,
+    userInfo:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that=this
+    // 查看是否授权
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting['scope.userInfo']) {
+          that.setData({isAuthorization:false})
+          wx.getUserInfo({
+            success: function (res) {
+              console.log(res.userInfo)
+              //用户已经授权过
+              that.setData({ userInfo: res.userInfo })
+            }
+          })
+        }else{
+          that.setData({ isAuthorization: true })
+        }
+      }
+    })
   },
-
+  // 换肤
+  skinPeeler(){
+    wx.navigateTo({
+      url: '/pages/skinPeeler/skinPeeler',
+    })
+  },
+  // 获取用户信息
+  bindGetUserInfo(e){
+    console.log(e)
+    if (e.detail.userInfo){
+      this.setData({ userInfo: e.detail.userInfo, isAuthorization: false })
+    }else{
+      this.setData({ isAuthorization: true })
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

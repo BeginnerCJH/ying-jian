@@ -1,21 +1,56 @@
 <!--pages/popular/popular.wxml-->
+<!-- 声明需要使用的模板文件 -->
+<import src ="../../template/movieList.wxml"/>
 <view>
-<!-- 搜索框 -->
-<block>
+  <!-- 搜索框 -->
+  <block>
     <view class="search">
-      <icon type="search" size="20" class="icon-search"/>
+      <icon type="search" size="20" class="icon-search" />
       <input placeholder="请输入关键字搜索" placeholder-class="search-txt-plc"></input>
     </view>
-</block>
-<!-- 轮播图 -->
-<swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper">
-  <block wx:for="{{bannerList}}">
-    <swiper-item>
-      <image mode="aspectFill" src="{{item.imgUrl}}" class="slide-image" data-id="{{item.id}}"/>
-    </swiper-item>
   </block>
-</swiper>
+  <view class="con">
+    <!-- 轮播图 -->
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" class="swiper">
+      <block wx:for="{{bannerList}}" wx:key="{{item.id}}">
+        <swiper-item data-id="{{item.id}}">
+          <image mode="aspectFill" src="{{item.imgUrl}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- 主要内容 -->
+    <!-- <block>
+        <view class="main">
+          <view class="list" wx:for="{{filmSubjects}}" wx:key="{{item.id}}">
+            <view class="list-top">
+              <image src="{{item.images.large}}" mode="aspectFill">
+              </image>
+              <text class="rating">{{item.rating.average}}分</text>
+            </view>
+            <view class="list-bottom">
+              <view class="original-title">{{item.title}}</view>
+              <view class="genres">
+              <scroll-view scroll-x style="width: 100%" scroll-top="{{scrollTop}}">
+                <text class="genres-li" wx:for="{{item.genres}}" wx:key="{{subIndex}}" wx:for-item="subItem" wx:for-index="subIndex">{{subItem}}</text>
+                </scroll-view>
+              </view>
+            </view>
+          </view>
+        </view>
+    </block>
+    <block wx:if="{{hasMore}}">
+        <text class="tip">拼命加载中...</text>
+    </block>
+     <block wx:else> 
+        <text class="tip">没有更多内容</text>
+    </block> -->
+    <!-- 主要内容 -->
+    <template is="movieList" data="{{filmSubjects,hasMore}}" />
+
+
+
+  </view>
+
 
 
 </view>

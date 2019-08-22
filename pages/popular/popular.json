@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "正在热映"
+  "navigationBarTitleText": "正在热映",
+  "enablePullDownRefresh":true
 }
