@@ -41,14 +41,14 @@
       <view class="thecast-con">
         <scroll-view scroll-x style="width: auto;" class="scroll-view">
           <block wx:for="{{filmContent.directors}}" wx:key="{{item.id}}">
-            <view class="thecast-li">
+            <view class="thecast-li" bindtap="goToPersonDetail" data-personid="{{item.id}}">
               <image src="{{item.avatars.large}}" mode="aspectFill"></image>
               <text>{{item.name}}</text>
               <text>导演</text>
             </view>
           </block>
           <block wx:for="{{filmContent.casts}}" wx:key="{{item.id}}">
-            <view class="thecast-li">
+            <view class="thecast-li" bindtap="goToPersonDetail" data-personid="{{item.id}}">
               <image src="{{item.avatars.large}}" mode="aspectFill"></image>
               <text>{{item.name}}</text>
               <text>演员</text>
@@ -83,6 +83,9 @@
             <image src="{{item.author.avatar}}"></image>
             <text>{{item.author.name}}</text>
             <text>{{item.created_at}}</text>
+          </view>
+          <view class="con-bottom">
+            {{item.content}}
           </view>
         </block>
       </view>

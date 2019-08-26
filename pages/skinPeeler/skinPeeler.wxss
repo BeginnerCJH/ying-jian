@@ -8,10 +8,11 @@ page{
 .skin .skin-li{
   height: 350rpx;
   margin-bottom: 20rpx;
-  border-radius: 20rpx;
+  border-radius: 30rpx;
   border: 7rpx solid #fff;
   box-sizing: border-box;
   position: relative;
+  overflow: hidden;
 }
 .skin-li image{
   height: 100%;
@@ -34,7 +35,6 @@ page{
 }
 .skin .active{
   border: 7rpx solid #47a86c;
-  overflow: hidden;
 }
 .skin .active::before{
   content: "";
@@ -52,8 +52,8 @@ page{
   color: #fff;
   display: block;
   position: absolute;
-  top: 12rpx;
-  right: 8rpx;
+  top: 16rpx;
+  right: 6rpx;
   font-size: 32rpx;
   transform: rotate(45deg)
 }

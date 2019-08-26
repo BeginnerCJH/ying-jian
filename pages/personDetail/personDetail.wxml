@@ -1,0 +1,46 @@
+<!--pages/personDetail/personDetail.wxml-->
+<view>
+  <view class="person-top">
+    <view class="person-bg" style="background:url({{personDetail.avatars.large}})"></view>
+    <view class="avatars">
+      <image src="{{personDetail.avatars.small}}" mode="aspectFill"></image>
+      <view class="avatars-name">{{personDetail.name}}</view>
+      <view class="avatars-name_en">{{personDetail.name_en}}</view>
+      <view class="avatars-born_place">{{personDetail.born_place}}</view>
+      <view class="collect" wx:if="{{!isEmpty}}">收藏</view>
+    </view>
+  </view>
+  <view class="person-bottom" wx:if="{{!isEmpty}}">
+    <view class="summary">
+      <text class="bottom-title">影人介绍</text>
+      <view class="summary-con">
+        <text class="con {{isNnfold?'ucon':''}}">{{personDetail.summary}}</text>
+        <text class="unfold" bindtap="unfold" wx:if="{{!isNnfold}}">展开</text>
+      </view>
+
+
+    </view>
+    <view class="photos">
+      <text class="bottom-title">图片({{personDetail.photos.length}})</text>
+      <view class="photos-con">
+        <scroll-view scroll-x style="width: auto;" class="scroll-view">
+          <block wx:for="{{personDetail.photos}}" wx:key="{{item.id}}">
+            <image src="{{item.image}}" mode="aspectFill" bindtap="preview" data-imgurl="{{item.image}}"></image>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="works">
+      <text class="bottom-title">个人作品({{personDetail.works.length}})</text>
+      <view class="works-con">
+        <block  wx:for="{{personDetail.works}}" wx:key="{{index}}">
+          <view class="works-list" bindtap="viewDetails" data-id="{{item.subject.id}}">
+            <image src="{{item.subject.images.large}}" mode="aspectFill"></image>
+            <view class="works-title">{{item.subject.title}}</view>
+            <view class="works-roles">担任:{{item.roles}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
