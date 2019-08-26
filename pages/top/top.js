@@ -45,9 +45,9 @@ Page({
   },
   // 点击跳转电影详情
   viewDetails(e) {
-    console.log('我是详情')
+    let id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/filmDetails/filmDetails',
+      url: `/pages/filmDetails/filmDetails?id=${id}`,
     })
   },
   // 点击标签
@@ -86,7 +86,22 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({ start: 0, hasMore: true })
+    var obj = {
+      url: api.apiList.top,
+      data: {
+        city: api.city,
+        start: this.data.start,
+        count: api.count
+      }
+    }
+    http.request(obj).then(res => {
+      this.setData({ filmSubjects: res.subjects, count: res.count, total: res.total })
+      wx.stopPullDownRefresh()
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
   },
 
   /**

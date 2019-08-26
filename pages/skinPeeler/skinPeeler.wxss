@@ -1,1 +1,59 @@
 /* pages/skinPeeler/skinPeeler.wxss */
+page{
+
+}
+.skin{
+  padding: 20rpx;
+}
+.skin .skin-li{
+  height: 350rpx;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  border: 7rpx solid #fff;
+  box-sizing: border-box;
+  position: relative;
+}
+.skin-li image{
+  height: 100%;
+  width: 100%;
+  border-radius: 20rpx;
+}
+.skin-li text{
+  display: inline-block;
+  background: rgba(0, 0, 0, .5);
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  line-height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #fff;
+}
+.skin .active{
+  border: 7rpx solid #47a86c;
+  overflow: hidden;
+}
+.skin .active::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: -80rpx;
+  right: -80rpx;
+  width: 160rpx;
+  height: 160rpx;
+  background: #47a86c;
+  transform: rotate(45deg)
+}
+.skin .active::after{
+  content: "在用";
+  color: #fff;
+  display: block;
+  position: absolute;
+  top: 12rpx;
+  right: 8rpx;
+  font-size: 32rpx;
+  transform: rotate(45deg)
+}

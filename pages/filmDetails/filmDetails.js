@@ -1,20 +1,58 @@
 // pages/filmDetails/filmDetails.js
+const api = require("../../api/api_config.js")
+const http = require("../../utils/http.js")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    filmContent:{},
+    isEmpty:true,
+    isNnfold:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    let id=options.id
+    this.getFilmDetails(id)
+  },
+  // 获取电影详情
+  getFilmDetails(id){
+    var obj = {
+      url: api.apiList.filmDetail+id,
+    }
+    http.request(obj).then(res => {
+      console.log(res)
+      this.setData({filmContent:res,isEmpty:false})
+      wx.setNavigationBarTitle({
+        title: res.title
+      })
+    }).catch(err => {
+      console.log(err)
+    })
   },
 
+  // 展开详情
+  unfold(){
+    this.setData({ isNnfold: true })
+  },
+  // 剧照预览
+  preview(e){
+    console.log(e.currentTarget.dataset.imgurl)
+    let url = e.currentTarget.dataset.imgurl
+    let urlObj=[]
+    this.data.filmContent.photos.forEach(val=>{
+      urlObj.push(val.image)
+    })
+    wx.previewImage({
+      current: url, // 当前显示图片的http链接
+      urls: urlObj // 需要预览的图片http链接列表
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

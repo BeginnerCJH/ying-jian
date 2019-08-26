@@ -1,2 +1,9 @@
 <!--pages/skinPeeler/skinPeeler.wxml-->
-<text>pages/skinPeeler/skinPeeler.wxml</text>
+<view class="skin">
+    <block wx:for="{{skinList}}" wx:key="{{index}}" >
+        <view class="skin-li {{title==item.title?'active':''}}" bindtap="goToMine" data-title="{{item.title}}" data-bgurl="{{item.imgUrl}}">
+           <image src="{{item.imgUrl}}"></image>
+           <text>{{item.title}}</text>
+        </view>
+    </block>
+</view>

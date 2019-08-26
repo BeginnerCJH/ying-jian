@@ -1,2 +1,91 @@
 <!--pages/filmDetails/filmDetails.wxml-->
-<text>pages/filmDetails/filmDetails.wxml</text>
+<view>
+  <view class="fd-top">
+    <view class="top-bg" style="background-image: url({{filmContent.images.large}})"></view>
+    <view class="tb-left">
+      <image src="{{filmContent.images.medium}}" mode="aspectFill"></image>
+      <view class="collect" wx:if="{{!isEmpty}}">
+        <text>收藏</text>
+      </view>
+    </view>
+    <view class="tb-right" wx:if="{{!isEmpty}}">
+      <view class="title">{{filmContent.title}}</view>
+      <view class="original-title">{{filmContent.original_title}} ({{filmContent.year}})</view>
+      <view class="countries">{{filmContent.countries}}/{{filmContent.genres}}/{{filmContent.pubdates}}上映/片长{{filmContent.durations}}</view>
+    </view>
+  </view>
+  <view class="fd-bottom" wx:if="{{!isEmpty}}">
+    <view class="fdb-one">
+      <view class="count-li">
+        <text>{{filmContent.collect_count}}</text>
+        <text>看过</text>
+      </view>
+      <view class="count-li">
+        <text>{{filmContent.wish_count}}</text>
+        <text>想看</text>
+      </view>
+      <view class="count-li">
+        <text>{{filmContent.ratings_count}}</text>
+        <text>评分人数</text>
+      </view>
+    </view>
+    <view class="synopsis">
+      <text class="bottom-title">剧情简介</text>
+      <view class="synopsis-con">
+        <text class="con {{isNnfold?'ucon':''}}">{{filmContent.summary}}</text>
+        <text class="unfold" bindtap="unfold" wx:if="{{!isNnfold}}">展开</text>
+      </view>
+    </view>
+    <view class="thecast">
+      <text class="bottom-title">演职员</text>
+      <view class="thecast-con">
+        <scroll-view scroll-x style="width: auto;" class="scroll-view">
+          <block wx:for="{{filmContent.directors}}" wx:key="{{item.id}}">
+            <view class="thecast-li">
+              <image src="{{item.avatars.large}}" mode="aspectFill"></image>
+              <text>{{item.name}}</text>
+              <text>导演</text>
+            </view>
+          </block>
+          <block wx:for="{{filmContent.casts}}" wx:key="{{item.id}}">
+            <view class="thecast-li">
+              <image src="{{item.avatars.large}}" mode="aspectFill"></image>
+              <text>{{item.name}}</text>
+              <text>演员</text>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="stagephoto">
+      <text class="bottom-title">预告片/剧照</text>
+      <view class="stagephoto-con">
+        <scroll-view scroll-x style="width: auto;" class="scroll-view">
+          <block wx:for="{{filmContent.trailers}}" wx:key="{{item.id}}">
+            <view class="stagephoto-li">
+              <video src="{{item.resource_url}}" poster="{{item.medium}}" controls show-center-play-btn>
+              </video>
+            </view>
+          </block>
+          <block wx:for="{{filmContent.photos}}" wx:key="{{item.id}}">
+            <view class="stagephoto-li-photos">
+              <image src="{{item.image}}" mode="aspectFill" bindtap="preview" data-imgurl="{{item.image}}"></image>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="shortcommentary">
+      <text class="bottom-title">短评</text>
+      <view class="shortcommentary-con">
+        <block wx:for="{{filmContent.popular_comments}}" wx:key="{{item.id}}">
+          <view class="con-top">
+            <image src="{{item.author.avatar}}"></image>
+            <text>{{item.author.name}}</text>
+            <text>{{item.created_at}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

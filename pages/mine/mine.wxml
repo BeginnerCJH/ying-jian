@@ -1,7 +1,7 @@
 <!--pages/mine/mine.wxml-->
 <view>
-  <view class="mine-top" style="background-image: url({{background}});backgroundSize:'cover'">
-    <view class="huanhu" bindtap="skinPeeler"></view>
+  <view class="mine-top" style="background-image: url({{background}})">
+    <view class="huanhu" bindtap="skinPeeler" data-title="{{title}}"></view>
     <view class="user">
       <button class="user-btn" open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo" wx:if="{{isAuthorization}}">点击登录</button>
       <view class="user-info" wx:else>

@@ -1,5 +1,6 @@
 {
   "usingComponents": {},
   "navigationBarTitleText": "即将上映",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "light"
 }

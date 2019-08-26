@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    background: "https://static.sesine.com/wechat-weapp-movie/images/user_bg_2.jpg",
+    background: "https://static.sesine.com/wechat-weapp-movie/images/user_bg_1.jpg",
+    title:'公路',
     isAuthorization:true,
     userInfo:{}
   },
@@ -32,9 +33,20 @@ Page({
         }
       }
     })
+    // 查看是否有缓存
+    if (wx.getStorageSync('skins')){
+      let obj = JSON.parse(wx.getStorageSync('skins'))
+      this.setData({background:obj.bgUrl,title:obj.title})
+    }
   },
   // 换肤
-  skinPeeler(){
+  skinPeeler(e){
+    let title = e.currentTarget.dataset.title
+    let obj={
+      title:title,
+      bgUrl:this.data.background
+    }
+    wx.setStorageSync('skins', JSON.stringify(obj))
     wx.navigateTo({
       url: '/pages/skinPeeler/skinPeeler',
     })
@@ -59,7 +71,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // 查看是否有缓存
+    if (wx.getStorageSync('skins')) {
+      let obj = JSON.parse(wx.getStorageSync('skins'))
+      this.setData({ background: obj.bgUrl, title: obj.title })
+    }
   },
 
   /**

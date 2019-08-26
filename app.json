@@ -11,7 +11,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#48a76d",
     "navigationBarTitleText": "电影推荐",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "backgroundColor":"#f3f3f3"
   },
   "tabBar": {
     "color":"#8c8c8c",

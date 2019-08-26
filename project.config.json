@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -54,6 +54,13 @@
 					"name": "pages/mine/mine",
 					"pathName": "pages/mine/mine",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/filmDetails/filmDetails",
+					"pathName": "pages/filmDetails/filmDetails",
+					"query": "id=27163278",
 					"scene": null
 				}
 			]

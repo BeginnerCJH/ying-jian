@@ -58,9 +58,10 @@ Page({
   },
   // 点击跳转电影详情
   viewDetails(e){
-    console.log('我是详情')
+    console.log(e.currentTarget.dataset.id)
+    let id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/filmDetails/filmDetails',
+      url: `/pages/filmDetails/filmDetails?id=${id}`,
     })
   },
   // 点击标签
@@ -110,6 +111,7 @@ Page({
     }
     http.request(obj).then(res => {
       this.setData({ filmSubjects: res.subjects, count: res.count, total: res.total })
+      wx.stopPullDownRefresh()
       console.log(res)
     }).catch(err => {
       console.log(err)

@@ -3,6 +3,7 @@
 .mine-top {
   height: 450rpx;
   position: relative;
+  background-size: cover;
 }
 
 .mine-top .huanhu {
