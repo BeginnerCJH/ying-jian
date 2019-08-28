@@ -5,7 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentIndex: 0
+    tabTitle: ['电影', '人物'],
+    tipF: {
+      tipTitle: '亲，找不到电影收藏记录',
+      tipBtn: '去逛逛',
+      url: "/pages/popular/popular"
+    },
+    tipP: {
+      tipTitle: '亲，找不到人物收藏记录',
+      tipBtn: '去逛逛',
+      url: "/pages/popular/popular"
+    },
   },
 
   /**
@@ -13,24 +23,6 @@ Page({
    */
   onLoad: function(options) {
 
-  },
-  // tab栏点击事件
-  clickTab(e) {
-    console.log(e.currentTarget.dataset.index)
-    if (this.data.currentIndex == e.currentTarget.dataset.index) {
-      return false;
-    } else {
-      this.setData({
-        currentIndex: e.currentTarget.dataset.index
-      })
-    }
-  },
-  // tab主要内容滑动事件
-  changeTabCon(e) {
-    console.log(e.detail.current)
-    this.setData({
-      currentIndex: e.detail.current
-    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

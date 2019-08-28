@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "tab": "/component/tab/tab"
+  },
   "navigationBarTitleText": "浏览记录"
 }

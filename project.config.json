@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -81,6 +81,13 @@
 					"id": -1,
 					"name": "pages/collect/collect",
 					"pathName": "pages/collect/collect",
+					"query": "personid=1054436",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/browse/browse",
+					"pathName": "pages/browse/browse",
 					"query": "personid=1054436",
 					"scene": null
 				}

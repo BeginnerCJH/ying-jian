@@ -5,79 +5,70 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentIndex: 0
+    tabTitle: ['电影', '人物'],
+    tipF: {
+      tipTitle: '亲，找不到电影浏览记录',
+      tipBtn: '去逛逛',
+      url: "/pages/popular/popular"
+    },
+    tipP: {
+      tipTitle: '亲，找不到人物浏览记录',
+      tipBtn: '去逛逛',
+      url: "/pages/popular/popular"
+    },
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
-  },
-  // tab栏点击事件
-  clickTab(e) {
-    console.log(e.currentTarget.dataset.index)
-    if (this.data.currentIndex == e.currentTarget.dataset.index) {
-      return false;
-    } else {
-      this.setData({
-        currentIndex: e.currentTarget.dataset.index
-      })
-    }
-  },
-  // tab主要内容滑动事件
-  changeTabCon(e) {
-    console.log(e.detail.current)
-    this.setData({
-      currentIndex: e.detail.current
-    })
+  onLoad: function(options) {
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
+  onReady: function() {
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow: function() {
+   
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

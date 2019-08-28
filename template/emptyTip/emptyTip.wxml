@@ -1,0 +1,8 @@
+<template name="emptyTip">
+  <view class="empty-tip">
+    <view class="tip">{{tipTitle}}</view>
+    <view class="btn">
+      <navigator open-type="switchTab" url="{{url}}">{{tipBtn}}</navigator>
+    </view>
+  </view>
+</template>

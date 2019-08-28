@@ -1,2 +1,23 @@
 <!--component/tab/tab.wxml-->
-<text>component/tab/tab.wxml</text>
+<view>
+  <view class="tab-title">
+    <block wx:for="{{tabTitle}}" wx:key="{{index}}">
+      <text class="one {{currentIndex==index?'on':''}}" bindtap="clickTab" data-index="{{index}}">{{item}}</text>
+    </block>
+  </view>
+  <view class="tab-con">
+    <swiper duration="200" current="{{currentIndex}}" bindchange='changeTabCon' class="swiper">
+      <block wx:for="{{tabTitle}}" wx:key="{{index}}">
+        <swiper-item class="swiper-item">
+          <scroll-view scroll-y style="height: 100%;">
+            <slot name="{{index}}">
+            
+            </slot>
+          </scroll-view>
+        </swiper-item>
+      </block>
+    </swiper>
+
+  </view>
+
+</view>
