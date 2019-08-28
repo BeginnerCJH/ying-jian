@@ -3,7 +3,22 @@
 <view>
   <tab tabTitle="{{tabTitle}}" id="tab">
     <view slot="0">
-      <template is="emptyTip" data="{{...tipF}}" />
+      <template is="emptyTip" data="{{...tipF}}" wx:if="{{isEmptyF}}" />
+      <block wx:for="{{flimBrowseArr}}" wx:key="{{index}}">
+        <view class="film-list">
+          <view class="time">{{item.time}}</view>
+          <view class="con">
+            <image src="{{item.data.images.large}}" mode="aspectFill"></image>
+            <view class="main">
+              <view>{{item.data.title}}</view>
+              <view>导演:{{item.data.directors[0].name}}</view>
+              <view>演员:
+                <text wx:for="{{item.data.casts}}" wx:for-item="subItem" wx:key="{{subItem.id}}">{{subItem.name}}/</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
     </view>
     <view slot="1">
       <template is="emptyTip" data="{{...tipP}}" />

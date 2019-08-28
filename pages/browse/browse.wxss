@@ -1,2 +1,25 @@
 /* pages/browse/browse.wxss */
 @import "../../template/emptyTip/emptyTip.wxss";
+
+.film-list {
+  padding: 10rpx 30rpx;
+  margin-bottom: 40rpx;
+}
+
+.film-list .time {
+  line-height: 80rpx;
+  font-size: 60rpx;
+  color: #e5e5e5;
+  padding: 0 10rpx;
+}
+
+.film-list .con {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+.con image{
+  width: 300rpx;
+  height: 450rpx;
+  box-shadow: 15rpx 15rpx 40rpx 15rpx #dcdcdc;
+}
