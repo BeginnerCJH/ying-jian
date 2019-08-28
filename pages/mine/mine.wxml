@@ -16,11 +16,25 @@
   </view>
   <!-- 下半部分 -->
   <view class="mine-bottom">
-    <view class="m-li">收藏</view>
-    <view class="m-li">浏览记录</view>
-    <view class="m-li">摇一摇</view>
-    <view class="m-li">相册</view>
-    <view class="m-li">设置</view>
+    <navigator url="/pages/collect/collect" open-type="navigate" class="m-li">
+      <view>收藏</view>
+    </navigator>
+    <navigator url="/pages/browse/browse" open-type="navigate" class="m-li">
+      <view>浏览记录</view>
+    </navigator>
+    <navigator url="/pages/collect/collect" open-type="navigate" class="m-li">
+      <view>摇一摇</view>
+    </navigator>
+    <navigator url="/pages/collect/collect" open-type="navigate" class="m-li">
+      <view>相册</view>
+    </navigator>
+    <navigator url="/pages/collect/collect" open-type="navigate" class="m-li">
+      <view>设置</view>
+    </navigator>
+
+
+
+
   </view>
 
 </view>

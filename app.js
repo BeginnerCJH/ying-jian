@@ -3,6 +3,7 @@ const api = require("./api/api_config.js")
 const http = require("./utils/http.js")
 App({
   onLaunch: function() {
+    console.log("每次都会触发一次吗")
     // 登录
     wx.login({
       success: res => {

@@ -1,5 +1,5 @@
 <!--pages/coming/coming.wxml-->
-<import src="../../template/movieList.wxml" />
+<import src="../../template/movieList/movieList.wxml" />
 <view>
   <template is="movieList" data="{{filmSubjects,hasMore}}" />
 </view>

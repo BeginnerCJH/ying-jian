@@ -1,0 +1,60 @@
+/* pages/collect/collect.wxss */
+
+.tab-title {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 100rpx;
+  line-height: 100rpx;
+  position: relative;
+}
+
+.tab-title::after {
+  content: "";
+  display: block;
+  width: 50%;
+  left: 0;
+  bottom: 0;
+  background: #eee;
+  height: 6rpx;
+  position: absolute;
+}
+
+.tab-title::before {
+  content: "";
+  display: block;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  background: #eee;
+  height: 6rpx;
+  position: absolute;
+}
+
+.tab-left::after {
+  background: #47a86c;
+  transition: all 0.6s;
+  margin-left: 0%;
+}
+
+.tab-right::after {
+  background: #47a86c;
+  transition: all 0.6s;
+  margin-left: 50%;
+}
+
+.tab-title .one, .two {
+  flex: 1;
+  text-align: center;
+}
+
+.tab-con {
+  position: absolute;
+  top: 120rpx;
+  bottom: 0;
+  width: 100%;
+}
+
+.tab-con .swiper {
+  height: 100%;
+}

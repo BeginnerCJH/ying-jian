@@ -1,0 +1,23 @@
+<!--pages/browse/browse.wxml-->
+<view>
+  <view class="tab-title {{currentIndex==0?'tab-left':'tab-right'}}">
+    <text class="one" bindtap="clickTab" data-index="0">电影</text>
+    <text class="two" bindtap="clickTab" data-index="1">人物</text>
+  </view>
+  <view class="tab-con">
+    <swiper duration="200" current="{{currentIndex}}" bindchange='changeTabCon' class="swiper">
+      <swiper-item class="swiper-item">
+        <scroll-view scroll-y style="height: 100%;">
+          a
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y style="height: 100%;">
+          b
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+
+  </view>
+
+</view>

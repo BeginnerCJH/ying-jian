@@ -6,7 +6,9 @@
     "pages/mine/mine",
     "pages/filmDetails/filmDetails",
     "pages/skinPeeler/skinPeeler",
-    "pages/personDetail/personDetail"
+    "pages/personDetail/personDetail",
+    "pages/collect/collect",
+    "pages/browse/browse"
   ],
   "window": {
     "backgroundTextStyle": "light",
