@@ -10,7 +10,8 @@ Page({
   data: {
     filmContent: {},
     isEmpty: true,
-    isNnfold: false
+    isNnfold: false,
+    isCollect: false
   },
 
   /**
@@ -35,9 +36,11 @@ Page({
       wx.setNavigationBarTitle({
         title: res.title
       })
+      // 判断是否已经收藏
+      this.hasCollect()
       let arr = []
-      if (wx.getStorageSync('browseFikn')) {
-        arr = JSON.parse(wx.getStorageSync('browseFikn'))
+      if (wx.getStorageSync('browseFilm')) {
+        arr = JSON.parse(wx.getStorageSync('browseFilm'))
       } else {
         arr = []
       }
@@ -58,14 +61,54 @@ Page({
         arr.splice(index, 1)
         arr.unshift(obj)
       }
-      wx.setStorageSync('browseFikn', JSON.stringify(arr))
-      console.log(JSON.parse(wx.getStorageSync('browseFikn')))
+      wx.setStorageSync('browseFilm', JSON.stringify(arr))
+      console.log(JSON.parse(wx.getStorageSync('browseFilm')))
 
     }).catch(err => {
       console.log(err)
     })
   },
+  // 判断是否已经收藏
+  hasCollect() {
+    if (wx.getStorageSync('collectFilm')) {
+      let arr = JSON.parse(wx.getStorageSync('collectFilm'))
+      for (let i = 0; i < arr.length; i++) {
+        let val = arr[i]
+        if (this.data.filmContent.id == val.id) {
+          this.setData({
+            isCollect: true
+          })
+          break;
+        }
+      }
+    }
+  },
+  // 点击加入收藏
+  handleCollect(e) {
+    console.log(123);
+    this.data.isCollect = !this.data.isCollect
+    this.setData({
+      isCollect: this.data.isCollect
+    })
+    let arr = []
+    if (wx.getStorageSync('collectFilm')) {
+      arr = JSON.parse(wx.getStorageSync('collectFilm'))
+    } else {
+      arr = []
+    }
+    let index = arr.findIndex(val => {
+      return this.data.filmContent.id == val.id;
+    })
 
+    if (this.data.isCollect) {
+      arr.unshift(this.data.filmContent)
+    } else {
+      arr.splice(index, 1)
+    }
+    wx.setStorageSync('collectFilm', JSON.stringify(arr))
+    console.log(JSON.parse(wx.getStorageSync('collectFilm')))
+
+  },
   // 展开详情
   unfold() {
     this.setData({

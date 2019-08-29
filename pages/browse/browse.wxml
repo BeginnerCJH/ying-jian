@@ -8,12 +8,19 @@
         <view class="film-list">
           <view class="time">{{item.time}}</view>
           <view class="con">
-            <image src="{{item.data.images.large}}" mode="aspectFill"></image>
+            <image src="{{item.data.images.large}}" mode="aspectFill" data-id="{{item.data.id}}" bindtap="viewDetails"></image>
             <view class="main">
-              <view>{{item.data.title}}</view>
-              <view>导演:{{item.data.directors[0].name}}</view>
-              <view>演员:
-                <text wx:for="{{item.data.casts}}" wx:for-item="subItem" wx:key="{{subItem.id}}">{{subItem.name}}/</text>
+              <view class="fb-title">{{item.data.title}}</view>
+              <view class="fb-directors">导演： {{item.data.directors[0].name}}
+              </view>
+              <view class="fb-casts">演员：
+                <block wx:for="{{item.data.casts}}" wx:for-item="subItem" wx:key="{{subItem.id}}">
+                  <text>{{subItem.name}}</text>
+                </block>
+              </view>
+              <view class="fb-rating">豆瓣评分： {{item.data.rating.average}}分
+              </view>
+              <view class="fb-year">上映年份： {{item.data.year}}年
               </view>
             </view>
           </view>
@@ -21,7 +28,30 @@
       </block>
     </view>
     <view slot="1">
-      <template is="emptyTip" data="{{...tipP}}" />
+      <template is="emptyTip" data="{{...tipP}}" wx:if="{{isEmptyP}}" />
+      <view class="person">
+        <block wx:for="{{personBrowseArr}}" wx:key="{{index}}">
+          <view class="person-con">
+            <view class="key-time">{{index}}</view>
+            <block wx:for="{{item}}" wx:for-item="subItem" wx:key="{{subItem.time}}">
+              <view class="ju-time">{{subItem.time}}</view>
+              <view class="person-card">
+                <image src="{{subItem.data.avatars.large}}" mode="aspectFill" data-personid="{{subItem.data.id}}" bindtap="goToPersonDetail"></image>
+                <view class="person-card-main">
+                  <view class="person-name">{{subItem.data.name}}</view>
+                  <view class="person-name_en">{{subItem.data.name_en}}</view>
+                  <view class="person-born_place">{{subItem.data.born_place}}</view>
+                  <view class="person-works">主要作品：
+                    <block wx:for="{{subItem.data.works}}" wx:for-item="subItemCild" wx:key="{{subItemCild.subject.id}}">
+                      <text>{{subItemCild.subject.title}} </text>
+                    </block>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
     </view>
   </tab>
 </view>

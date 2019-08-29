@@ -1,3 +1,121 @@
 /* pages/collect/collect.wxss */
 @import "../../template/emptyTip/emptyTip.wxss";
+.film-list {
+  padding: 10rpx 30rpx;
+  margin-bottom: 40rpx;
+}
 
+.film-list .time {
+  line-height: 80rpx;
+  font-size: 60rpx;
+  color: #e5e5e5;
+  padding: 0 10rpx;
+}
+
+.film-list .con {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+
+.con image {
+  width: 300rpx;
+  height: 420rpx;
+  box-shadow: 15rpx 15rpx 40rpx 15rpx #dcdcdc;
+  flex-shrink: 0;
+}
+
+.con .main {
+  box-sizing: border-box;
+  padding: 10rpx 20rpx 10rpx 40rpx;
+  color: #666;
+}
+
+.main .fb-title {
+  font-size: 40rpx;
+  color: #444;
+}
+
+.main .fb-directors, .fb-casts, .fb-rating, .fb-year {
+  padding-top: 20rpx;
+  font-size: 28rpx;
+}
+
+.main .fb-casts text::after {
+  content: " / ";
+}
+
+.main .fb-casts text:last-of-type::after {
+  content: "";
+}
+
+.person {
+  padding: 0 20rpx 20rpx;
+}
+
+.person-con .key-time {
+  width: 280rpx;
+  margin: 0 auto;
+  background: #f4f4f4;
+  border-radius: 30rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #999;
+  font-size: 36rpx;
+}
+
+.person-con .ju-time {
+  width: 200rpx;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 80rpx;
+  color: #ccc;
+}
+
+.person-con .person-card {
+  width: 100%;
+  background: #fff;
+  height: 400rpx;
+  border-radius: 20rpx;
+  border: 2rpx #e1e1e1 solid;
+  box-shadow: 0rpx 20rpx 40rpx 20rpx #eaeaea;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20rpx 40rpx;
+  overflow: scroll;
+}
+
+.person-card image {
+  width: 250rpx;
+  height: 250rpx;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.person-card .person-card-main {
+  padding-left: 40rpx;
+  color: #999;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.person-card-main .person-name {
+  font-size: 40rpx;
+  color: #666;
+}
+
+.person-card-main .person-name_en, .person-born_place, .person-works {
+  padding-top: 10rpx;
+  font-size: 28rpx;
+}
+
+.person-works text::after {
+  content: "、";
+}
+
+.person-works text:last-of-type::after {
+  content: "";
+}

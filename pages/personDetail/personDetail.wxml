@@ -7,7 +7,7 @@
       <view class="avatars-name">{{personDetail.name}}</view>
       <view class="avatars-name_en">{{personDetail.name_en}}</view>
       <view class="avatars-born_place">{{personDetail.born_place}}</view>
-      <view class="collect" wx:if="{{!isEmpty}}">收藏</view>
+      <view class="collect {{isCollect?'iscollect':''}}" bindtap="handleCollect" wx:if="{{!isEmpty}}">{{isCollect?'已收藏':'收藏'}}</view>
     </view>
   </view>
   <view class="person-bottom" wx:if="{{!isEmpty}}">
@@ -17,8 +17,6 @@
         <text class="con {{isNnfold?'ucon':''}}">{{personDetail.summary}}</text>
         <text class="unfold" bindtap="unfold" wx:if="{{!isNnfold}}">展开</text>
       </view>
-
-
     </view>
     <view class="photos">
       <text class="bottom-title">图片({{personDetail.photos.length}})</text>
@@ -33,7 +31,7 @@
     <view class="works">
       <text class="bottom-title">个人作品({{personDetail.works.length}})</text>
       <view class="works-con">
-        <block  wx:for="{{personDetail.works}}" wx:key="{{index}}">
+        <block wx:for="{{personDetail.works}}" wx:key="{{index}}">
           <view class="works-list" bindtap="viewDetails" data-id="{{item.subject.id}}">
             <image src="{{item.subject.images.large}}" mode="aspectFill"></image>
             <view class="works-title">{{item.subject.title}}</view>

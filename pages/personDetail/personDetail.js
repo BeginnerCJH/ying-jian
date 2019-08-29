@@ -1,6 +1,7 @@
 // pages/personDetail/personDetail.js
 const api = require("../../api/api_config.js")
 const http = require("../../utils/http.js")
+const util = require('../../utils/util.js')
 Page({
 
   /**
@@ -9,7 +10,8 @@ Page({
   data: {
     personDetail: {},
     isEmpty: true,
-    isNnfold: false
+    isNnfold: false,
+    isCollect: false
   },
 
   /**
@@ -34,9 +36,84 @@ Page({
         personDetail: res,
         isEmpty: false
       })
+      // 判断是否加入收藏
+      this.hasCollect()
+      let arr = []
+      let time = util.formatTime(new Date).toString().split(" ")
+      console.log(time)
+      let keyTime = time[0];
+      let jutiTime = time[time.length - 1]
+      console.log(keyTime)
+      if (wx.getStorageSync('browsePerson')) {
+        arr = JSON.parse(wx.getStorageSync('browsePerson'))[keyTime]
+      } else {
+        arr = []
+      }
+      let obj = {
+        time: jutiTime,
+        data: res
+      }
+      let objK = {}
+      // 遍历对象
+      let falg = arr.some(val => {
+        return res.id == val.data.id;
+      })
+      let index = arr.findIndex(val => {
+        return res.id == val.data.id;
+      })
+      if (!falg) {
+        arr.unshift(obj)
+      } else {
+        arr.splice(index, 1)
+        arr.unshift(obj)
+      }
+      objK[keyTime] = arr
+      wx.setStorageSync('browsePerson', JSON.stringify(objK))
+      console.log(JSON.parse(wx.getStorageSync('browsePerson')))
     }).catch(err => {
       console.log(err)
     })
+  },
+  // 判断是否已经收藏
+  hasCollect() {
+    if (wx.getStorageSync('collectPerson')) {
+      let arr = JSON.parse(wx.getStorageSync('collectPerson'))
+      for (let i = 0; i < arr.length; i++) {
+        let val = arr[i]
+        if (this.data.personDetail.id == val.id) {
+          this.setData({
+            isCollect: true
+          })
+          break;
+        }
+      }
+    }
+  },
+  // 点击加入收藏
+  handleCollect(e) {
+    console.log(123);
+    this.data.isCollect = !this.data.isCollect
+    this.setData({
+      isCollect: this.data.isCollect
+    })
+    let arr = []
+    if (wx.getStorageSync('collectPerson')) {
+      arr = JSON.parse(wx.getStorageSync('collectPerson'))
+    } else {
+      arr = []
+    }
+    let index = arr.findIndex(val => {
+      return this.data.personDetail.id == val.id;
+    })
+
+    if (this.data.isCollect) {
+      arr.unshift(this.data.personDetail)
+    } else {
+      arr.splice(index, 1)
+    }
+    wx.setStorageSync('collectPerson', JSON.stringify(arr))
+    console.log(JSON.parse(wx.getStorageSync('collectPerson')))
+
   },
   // 展开详情
   unfold() {

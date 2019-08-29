@@ -1,12 +1,52 @@
 <!--pages/collect/collect.wxml-->
 <import src="../../template/emptyTip/emptyTip.wxml" />
 <view>
-  <tab tabTitle="{{tabTitle}}">
+  <tab tabTitle="{{tabTitle}}" id="tab">
     <view slot="0">
-      <template is="emptyTip" data="{{...tipF}}" />
+      <template is="emptyTip" data="{{...tipF}}" wx:if="{{isEmptyF}}" />
+      <block wx:for="{{flimCollectArr}}" wx:key="{{index}}">
+        <view class="film-list">
+          <view class="con">
+            <image src="{{item.images.large}}" mode="aspectFill" data-id="{{item.id}}" bindtap="viewDetails"></image>
+            <view class="main">
+              <view class="fb-title">{{item.title}}</view>
+              <view class="fb-directors">导演： {{item.directors[0].name}}
+              </view>
+              <view class="fb-casts">演员：
+                <block wx:for="{{item.casts}}" wx:for-item="subItem" wx:key="{{subItem.id}}">
+                  <text>{{subItem.name}}</text>
+                </block>
+              </view>
+              <view class="fb-rating">豆瓣评分： {{item.rating.average}}分
+              </view>
+              <view class="fb-year">上映年份： {{item.year}}年
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
     </view>
     <view slot="1">
-      <template is="emptyTip" data="{{...tipP}}" />
+      <template is="emptyTip" data="{{...tipP}}" wx:if="{{isEmptyP}}" />
+      <view class="person">
+        <block wx:for="{{personCollectArr}}" wx:key="{{index}}">
+          <view class="person-con">
+              <view class="person-card">
+                <image src="{{item.avatars.large}}" mode="aspectFill" data-personid="{{item.id}}" bindtap="goToPersonDetail"></image>
+                <view class="person-card-main">
+                  <view class="person-name">{{item.name}}</view>
+                  <view class="person-name_en">{{item.name_en}}</view>
+                  <view class="person-born_place">{{item.born_place}}</view>
+                  <view class="person-works">主要作品：
+                    <block wx:for="{{item.works}}" wx:for-item="subItemCild" wx:key="{{subItemCild.subject.id}}">
+                      <text>{{subItemCild.subject.title}} </text>
+                    </block>
+                  </view>
+                </view>
+              </view>
+          </view>
+        </block>
+      </view>
     </view>
   </tab>
 </view>

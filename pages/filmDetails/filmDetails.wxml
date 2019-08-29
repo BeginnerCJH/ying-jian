@@ -4,9 +4,7 @@
     <view class="top-bg" style="background-image: url({{filmContent.images.large}})"></view>
     <view class="tb-left">
       <image src="{{filmContent.images.medium}}" mode="aspectFill"></image>
-      <view class="collect" wx:if="{{!isEmpty}}">
-        <text>收藏</text>
-      </view>
+       <view class="collect {{isCollect?'iscollect':''}}" bindtap="handleCollect" wx:if="{{!isEmpty}}">{{isCollect?'已收藏':'收藏'}}</view>
     </view>
     <view class="tb-right" wx:if="{{!isEmpty}}">
       <view class="title">{{filmContent.title}}</view>
