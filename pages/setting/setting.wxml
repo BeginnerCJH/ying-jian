@@ -1,0 +1,23 @@
+<!--pages/setting/setting.wxml-->
+<view>
+  <view class="setting">
+    <navigator url="/pages/personalData/personalData" open-type="navigate" class="s-li">
+      <view>个人资料</view>
+    </navigator>
+    <view class="s-lis">
+      <navigator url="/pages/phoneInfo/phoneInfo" open-type="navigate" class="lia">
+        <view>手机信息</view>
+      </navigator>
+      <view class="lib" bindtap="clearCache">
+        清除缓存
+      </view>
+    </view>
+    <navigator url="/pages/updateLocation/updateLocation" open-type="navigate" class="s-li">
+      <view>更新位置</view>
+    </navigator>
+    <navigator url="/pages/aboutUs/aboutUs" open-type="navigate" class="s-li">
+      <view>关于</view>
+    </navigator>
+
+  </view>
+</view>

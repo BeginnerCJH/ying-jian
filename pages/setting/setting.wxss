@@ -1,0 +1,65 @@
+/* pages/setting/setting.wxss */
+
+page {
+  background: #f4f4f4;
+}
+
+.setting {
+  padding: 30rpx 0;
+}
+
+.setting .s-li {
+  height: 90rpx;
+  line-height: 90rpx;
+  background: #fff;
+  padding-left: 40rpx;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 40rpx;
+}
+
+.s-li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 40rpx;
+  transform: translateY(-50%) rotate(45deg);
+  width: 20rpx;
+  height: 20rpx;
+  border-top: 4rpx solid #c8c8cd;
+  border-right: 4rpx solid #c8c8cd;
+}
+
+.s-lis {
+  height: 180rpx;
+  background: #fff;
+  padding-left: 40rpx;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 40rpx;
+}
+
+.s-lis .lia, .lib {
+  line-height: 90rpx;
+  box-sizing: border-box;
+}
+
+.s-lis .lia {
+  position: relative;
+  border-bottom: 2rpx #f2f2f2 solid;
+}
+
+.lia::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 40rpx;
+  transform: translateY(-50%) rotate(45deg);
+  width: 20rpx;
+  height: 20rpx;
+  border-top: 4rpx solid #c8c8cd;
+  border-right: 4rpx solid #c8c8cd;
+}

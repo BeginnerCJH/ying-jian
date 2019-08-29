@@ -1,0 +1,23 @@
+<!--pages/personalData/personalData.wxml-->
+<view>
+  <view class="pd-li">
+    <text>头像</text>
+    <image src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+  </view>
+  <view class="pd-li">
+    <text>用户名</text>
+    <text>{{userInfo.nickName}}</text>
+  </view>
+   <view class="pd-li">
+    <text>性别</text>
+    <text>{{userInfo.gender==1?'男':'女'}}</text>
+  </view>
+  <view class="pd-li">
+    <text>所在地区</text>
+    <text>{{userInfo.country}}</text>
+  </view>
+  <view class="pd-li">
+    <text>语言</text>
+    <text>{{userInfo.language}}</text>
+  </view>
+</view>

@@ -4,9 +4,9 @@
 <view>
   <!-- 搜索框 -->
   <block>
-    <view class="search">
+    <view class="search" bindtap="sou">
       <icon type="search" size="20" class="icon-search" />
-      <input placeholder="请输入关键字搜索" placeholder-class="search-txt-plc"></input>
+      <view class="search-txt-plc">请输入关键字搜索</view> 
     </view>
   </block>
   <view class="con">

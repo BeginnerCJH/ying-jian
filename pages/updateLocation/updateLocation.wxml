@@ -1,0 +1,4 @@
+<!--pages/updateLocation/updateLocation.wxml-->
+<view>
+  <map></map>
+</view>

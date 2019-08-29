@@ -1,0 +1,24 @@
+/* pages/aboutUs/aboutUs.wxss */
+
+.about-title {
+  font-size: 60rpx;
+  text-align: center;
+  line-height: 250rpx;
+  color: #555;
+}
+
+.two, .three, .four {
+  margin-bottom: 20rpx;
+  padding: 0 60rpx;
+}
+
+.houduan, .zuozhe, .api {
+  color: #666;
+  line-height: 64rpx;
+}
+
+.douban, .baidu, .name, .juti {
+  font-size: 28rpx;
+  color: #ccc;
+  line-height: 40rpx;
+}

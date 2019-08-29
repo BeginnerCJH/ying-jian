@@ -1,0 +1,16 @@
+/* pages/phoneInfo/phoneInfo.wxss */
+
+page {
+  background: #f4f4f4;
+}
+
+.pi-li {
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+  background: #fff;
+  align-items: center;
+  border-bottom: 2rpx solid #f2f2f2;
+}

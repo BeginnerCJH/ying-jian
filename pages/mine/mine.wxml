@@ -22,19 +22,15 @@
     <navigator url="/pages/browse/browse" open-type="navigate" class="m-li">
       <view>浏览记录</view>
     </navigator>
-    <navigator url="/pages/collect/collect" open-type="navigate" class="m-li">
+    <navigator class="m-li" bindtap="yao" url="/pages/photoAlbum/photoAlbum" open-type="navigate">
       <view>摇一摇</view>
     </navigator>
     <navigator url="/pages/photoAlbum/photoAlbum" open-type="navigate" class="m-li">
       <view>相册</view>
     </navigator>
-    <navigator url="/pages/collect/collect" open-type="navigate" class="m-li">
+    <navigator url="/pages/setting/setting" open-type="navigate" class="m-li">
       <view>设置</view>
     </navigator>
-
-
-
-
   </view>
 
 </view>

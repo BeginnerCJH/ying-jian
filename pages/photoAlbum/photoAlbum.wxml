@@ -2,7 +2,7 @@
 <import src="../../template/emptyTip/emptyTip.wxml" />
 <view>
   <template is="emptyTip" data="{{...tip}}" wx:if="{{isEmpty}}" />
-  <view class="photos">
+  <view class="photos" wx:else>
     <view class="add" bindtap="clickTip">
       拍照/本地选择
     </view>

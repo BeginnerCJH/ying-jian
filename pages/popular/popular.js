@@ -68,6 +68,14 @@ Page({
   findTag(e){
     console.log('我是标签')
   },
+  // 提示
+  sou(){
+    wx.showToast({
+      title: '功能暂未开放',
+      icon: 'none',
+      duration: 2000
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

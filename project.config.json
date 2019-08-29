@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 11,
 			"list": [
 				{
 					"id": -1,
@@ -95,6 +95,34 @@
 					"id": -1,
 					"name": "pages/photoAlbum/photoAlbum",
 					"pathName": "pages/photoAlbum/photoAlbum",
+					"query": "personid=1054436",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/setting/setting",
+					"pathName": "pages/setting/setting",
+					"query": "personid=1054436",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/personalData/personalData",
+					"pathName": "pages/personalData/personalData",
+					"query": "personid=1054436",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/phoneInfo/phoneInfo",
+					"pathName": "pages/phoneInfo/phoneInfo",
+					"query": "personid=1054436",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/aboutUs/aboutUs",
+					"pathName": "pages/aboutUs/aboutUs",
 					"query": "personid=1054436",
 					"scene": null
 				}

@@ -1,0 +1,21 @@
+/* pages/personalData/personalData.wxss */
+
+page {
+  background: #f4f4f4;
+}
+
+.pd-li {
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+  background: #fff;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.pd-li image {
+  width: 80rpx;
+  height: 80rpx;
+}

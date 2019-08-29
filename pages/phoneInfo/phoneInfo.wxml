@@ -1,0 +1,9 @@
+<!--pages/phoneInfo/phoneInfo.wxml-->
+<view>
+  <block wx:for="{{phoneInfo}}" wx:key="{{index}}">
+    <view class="pi-li">
+      <text>{{item.name}}</text>
+      <text>{{item.value}}</text>
+    </view>
+  </block>
+</view>

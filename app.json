@@ -9,7 +9,12 @@
     "pages/personDetail/personDetail",
     "pages/collect/collect",
     "pages/browse/browse",
-    "pages/photoAlbum/photoAlbum"
+    "pages/photoAlbum/photoAlbum",
+    "pages/setting/setting",
+    "pages/personalData/personalData",
+    "pages/phoneInfo/phoneInfo",
+    "pages/aboutUs/aboutUs",
+    "pages/updateLocation/updateLocation"
   ],
   "window": {
     "backgroundTextStyle": "light",

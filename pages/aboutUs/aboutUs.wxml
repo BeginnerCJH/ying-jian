@@ -1,0 +1,20 @@
+<!--pages/aboutUs/aboutUs.wxml-->
+<view>
+  <view class="about-title">熊本熊影荐</view>
+  <view class="two">
+    <view class="houduan">后端支持</view>
+    <view class="douban">豆瓣API:https://douban.uieee.com/v2</view>
+    <view class="baidu">百度API:https://api.map.baidu.com/geocoder/v2/</view>
+  </view>
+  <view class="three">
+    <view class="zuozhe">作者</view>
+    <view class="name">BeginnerCJH:https://github.com/BeginnerCJH/ying-jian</view>
+  </view>
+  <view class="four">
+    <view class="api">此项目所使用的API(不分先后使用)</view>
+    <view class="juti">
+      wx.getSystemInfo、wx.switchTab、wx.navigateTo、wx.showModal、wx.showLoading、 wx.hideLoading、wx.showNavigationBarLoading、wx.setNavigationBarTitle、wx.hideNavigationBarLoading、 wx.request、wx.setStorageSync、wx.getStorageSync、wx.clearStorageSync、wx.previewImage、
+      wx.chooseImage、wx.getLocation、wx.saveFile、wx.removeSavedFile、wx.getSavedFileList、 wx.login、wx.getUserInfo
+    </view>
+  </view>
+</view>
