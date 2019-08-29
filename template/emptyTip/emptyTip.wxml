@@ -2,7 +2,8 @@
   <view class="empty-tip">
     <view class="tip">{{tipTitle}}</view>
     <view class="btn">
-      <navigator open-type="switchTab" url="{{url}}">{{tipBtn}}</navigator>
+      <navigator open-type="switchTab" url="{{url}}" wx:if="{{url}}">{{tipBtn}}</navigator>
+          <view catchtap="clickTip" wx:else>{{tipBtn}}</view>
     </view>
   </view>
 </template>

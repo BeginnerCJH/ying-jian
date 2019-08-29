@@ -1,0 +1,13 @@
+<!--pages/photoAlbum/photoAlbum.wxml-->
+<import src="../../template/emptyTip/emptyTip.wxml" />
+<view>
+  <template is="emptyTip" data="{{...tip}}" wx:if="{{isEmpty}}" />
+  <view class="photos">
+    <view class="add" bindtap="clickTip">
+      拍照/本地选择
+    </view>
+    <block wx:for="{{photoArr}}" wx:key="{{index}}">
+      <image src="{{item}}" mode="aspectFill" data-url="{{item}}" bindtap="preview"></image>
+    </block>
+  </view>
+</view>

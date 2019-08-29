@@ -1,0 +1,26 @@
+/* pages/photoAlbum/photoAlbum.wxss */
+@import "../../template/emptyTip/emptyTip.wxss";
+
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.photos .add {
+  height: 240rpx;
+  width: 240rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  text-align: center;
+  line-height: 250rpx;
+  background: rgba(0, 0, 0, .4);
+  color: #fff;
+}
+
+.photos image {
+  height: 240rpx;
+  width: 240rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}

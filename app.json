@@ -8,7 +8,8 @@
     "pages/skinPeeler/skinPeeler",
     "pages/personDetail/personDetail",
     "pages/collect/collect",
-    "pages/browse/browse"
+    "pages/browse/browse",
+    "pages/photoAlbum/photoAlbum"
   ],
   "window": {
     "backgroundTextStyle": "light",
