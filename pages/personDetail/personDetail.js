@@ -46,7 +46,13 @@ Page({
       let jutiTime = time[time.length - 1]
       console.log(keyTime)
       if (wx.getStorageSync('browsePerson')) {
-        arr = JSON.parse(wx.getStorageSync('browsePerson'))[keyTime]
+        let objP = JSON.parse(wx.getStorageSync('browsePerson'))
+        let keys = Object.keys(objP)
+        if (keys.indexOf(keyTime) == -1) {
+          arr = []
+        } else {
+          arr = JSON.parse(wx.getStorageSync('browsePerson'))[keyTime]
+        }
         objK = JSON.parse(wx.getStorageSync('browsePerson'))
       } else {
         arr = []
@@ -55,7 +61,7 @@ Page({
         time: jutiTime,
         data: res
       }
-     
+      console.log(arr)
       // 遍历对象
       let falg = arr.some(val => {
         return res.id == val.data.id;
