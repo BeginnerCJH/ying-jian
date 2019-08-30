@@ -10,7 +10,7 @@ Page({
     longitude: '',
     latitude: '',
     markers: [{
-      iconPath: "/images/dingwei.png",
+      iconPath: "/images/location.png",
       id: 0,
       latitude: 23.099994,
       longitude: 113.324520,
@@ -59,7 +59,7 @@ Page({
           console.log(api.city)
           _this.setData({
             markers: [{
-              iconPath: "/images/dingwei.png",
+              iconPath: "/images/location.png",
               id: 0,
               latitude: _this.data.latitude,
               longitude: _this.data.longitude,
@@ -93,7 +93,7 @@ Page({
           longitude: res.longitude + 0.001276,
           latitude: res.latitude + 0.001276,
           markers: [{
-            iconPath: "/images/dingwei.png",
+            iconPath: "/images/location.png",
             id: 0,
             latitude: res.latitude + 0.001276,
             longitude: res.longitude + 0.001276,

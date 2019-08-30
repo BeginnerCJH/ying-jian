@@ -76,7 +76,15 @@ Page({
         arr.unshift(obj)
       }
       objK[keyTime] = arr
-      wx.setStorageSync('browsePerson', JSON.stringify(objK))
+      let objPerson={}
+      let aa = Object.keys(objK).sort().reverse()
+      console.log(aa)
+      aa.forEach(val=>{
+        console.log(val)
+        objPerson[val] = objK[val]
+      })
+      console.log(objPerson)
+      wx.setStorageSync('browsePerson', JSON.stringify(objPerson))
       console.log(JSON.parse(wx.getStorageSync('browsePerson')))
     }).catch(err => {
       console.log(err)
