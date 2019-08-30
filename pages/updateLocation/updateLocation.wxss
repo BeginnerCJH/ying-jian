@@ -1,1 +1,35 @@
 /* pages/updateLocation/updateLocation.wxss */
+
+page {
+  height: 100%;
+}
+
+.location {
+  height: 100%;
+  position: relative;
+}
+
+.map {
+  height: 100%;
+  width: 100%;
+}
+
+.map-bottom {
+  position: absolute;
+  height: 350rpx;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 50rpx;
+}
+
+.map-bottom button {
+  background: #1aad19;
+  color: #fff;
+}
+
+.txt {
+  padding: 50rpx 20rpx;
+}

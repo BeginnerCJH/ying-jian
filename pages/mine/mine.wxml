@@ -22,7 +22,7 @@
     <navigator url="/pages/browse/browse" open-type="navigate" class="m-li">
       <view>浏览记录</view>
     </navigator>
-    <navigator class="m-li" bindtap="yao" url="/pages/photoAlbum/photoAlbum" open-type="navigate">
+    <navigator class="m-li" bindtap="yao" url="" open-type="">
       <view>摇一摇</view>
     </navigator>
     <navigator url="/pages/photoAlbum/photoAlbum" open-type="navigate" class="m-li">

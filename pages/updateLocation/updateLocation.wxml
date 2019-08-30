@@ -1,4 +1,8 @@
 <!--pages/updateLocation/updateLocation.wxml-->
-<view>
-  <map></map>
+<view class="location">
+  <map class="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" scale="17"></map>
+  <view class="map-bottom">
+    <button bindtap="selectLocation">重新选择位置</button>
+    <view class="txt">当前位置：{{markers[0].callout.content}}</view>
+  </view>
 </view>

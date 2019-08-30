@@ -79,7 +79,6 @@ Page({
   },
   // 点击提示
   yao(e) {
-    e.preventDefault()
     wx.showToast({
       title: '功能暂未开放',
       icon: 'none',
