@@ -39,6 +39,7 @@ Page({
       // 判断是否加入收藏
       this.hasCollect()
       let arr = []
+      let objK = {}
       let time = util.formatTime(new Date).toString().split(" ")
       console.log(time)
       let keyTime = time[0];
@@ -46,6 +47,7 @@ Page({
       console.log(keyTime)
       if (wx.getStorageSync('browsePerson')) {
         arr = JSON.parse(wx.getStorageSync('browsePerson'))[keyTime]
+        objK = JSON.parse(wx.getStorageSync('browsePerson'))
       } else {
         arr = []
       }
@@ -53,7 +55,7 @@ Page({
         time: jutiTime,
         data: res
       }
-      let objK = {}
+     
       // 遍历对象
       let falg = arr.some(val => {
         return res.id == val.data.id;
